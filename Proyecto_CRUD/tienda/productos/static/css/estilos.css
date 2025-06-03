@@ -7,7 +7,6 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 /* Contenedor principal */
@@ -21,74 +20,144 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
 }
 
-/* Títulos con estilo retro */
-h1 {
-    font-size: 26px;
-    text-shadow: 3px 3px 0px #000;
-    color: #00ff00;
+/* Lista de productos bien organizada */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajuste automático */
+    gap: 25px;
+    padding: 20px;
+    justify-content: center;
 }
 
-/* Botón principal con ajuste de tamaño */
+/* Contenedor para la página de eliminación */
+.delete-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 4px solid #ff0000;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Texto de advertencia */
+.delete-container h1 {
+    font-size: 26px;
+    color: #ff0000;
+    text-shadow: 3px 3px 0px black;
+}
+
+/* Botones de acción */
+.delete-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.delete-actions a,
+.delete-actions button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: 3px solid #ff0000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    margin: 5px;
+}
+
+.delete-actions .btn-cancel {
+    background: #444;
+    border: 3px solid #888;
+}
+
+.delete-actions .btn-delete {
+    background: #ff0000;
+}
+
+.delete-actions .btn-delete:hover {
+    background: #cc0000;
+}
+
+.delete-actions .btn-cancel:hover {
+    background: #666;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background: rgba(3, 66, 45, 0.9);
+    padding: 20px;
+    border: 4px solid #0bd8c7;
+    border-radius: 10px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    position: relative;
+}
+
+/* Imagen del producto bien alineada */
+.product-card img {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Información del producto */
+.product-info {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Botones de acción alineados abajo */
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.actions a {
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+    border: 3px solid #00ff00;
+    font-size: 16px;
+    flex: 1; /* Permite que los botones ocupen espacio */
+    text-align: center;
+    margin: 5px;
+}
+
+/* Estilo mejorado para el botón de Agregar Producto */
 .btn {
     display: block;
     width: 250px;
     margin: 15px auto;
     padding: 12px 20px;
-    background: #5e5e5e;
+    background: #00aa00; /* Verde vibrante estilo Minecraft */
     color: #fff;
     border: 3px solid #00ff00;
     text-decoration: none;
     font-size: 18px;
-}
-
-.btn:hover {
-    background: #00ff00;
-    color: #000;
-}
-
-/* Lista de productos con más espacio */
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste flexible */
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-}
-
-/* Estilos de tarjetas de productos */
-.product-card {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border: 4px solid #5e5e5e;
-    border-radius: 10px;
-    width: 280px;
+    font-weight: bold;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    position: relative;
-}
-
-/* Ajuste de imágenes de los productos */
-.product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+    transition: 0.3s;
     border-radius: 8px;
 }
 
-/* Acciones de cada producto */
-.actions {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-around;
+.btn-add:hover {
+    background: #00ff88; /* Verde más claro al pasar el mouse */
+    color: #000;
 }
 
-.actions a {
-    padding: 10px 15px;
-    color: #fff;
-    text-decoration: none;
-    border: 3px solid #00ff00;
-    font-size: 16px;
-}
+
 
 .actions .edit {
     background: #ffcc00;

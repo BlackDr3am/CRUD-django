@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Carrito de Compras</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+        <p>Total a pagar: ${{ carrito.total_pagar }}</p>
+        <p>Productos en tu carrito:</p>
+        <ul>
+            {% for producto in carrito.productos.all %}
+                <li>{{ producto.nombre }} - ${{ producto.precio }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'finalizar_compra' %}" class="btn-buy">Finalizar Compra</a>
+        <a href="{% url 'producto_list' %}" class="btn-cancel">Seguir Comprando</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Confirmación de Compra</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Compra realizada exitosamente</h1>
+        <p>Gracias por tu compra, {{ usuario.username }}.</p>
+        <p>Tu pedido será enviado a: <strong>{{ usuario.direccion }}</strong></p>
+        <p>Estado del envío: <strong>{{ envio.estado }}</strong></p>
+        <ul>
+            {% for producto in envio.productos.all %}
+                <li>{{ producto.nombre }} - ${{ producto.precio }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'producto_list' %}" class="btn-home">Volver a la tienda</a>
+    </div>
+</body>
+</html>

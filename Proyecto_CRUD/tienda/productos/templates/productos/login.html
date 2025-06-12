@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Agregar Producto</title>
+    <title>Iniciar Sesión</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
     <div class="container">
-        <h1>Agregar Producto</h1>
+        <h1>Iniciar Sesión</h1>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Guardar</button>
+            <button type="submit">Ingresar</button>
         </form>
-        <a href="{% url 'producto_list' %}" class="btn-cancel">Cancelar</a>
+        <p>¿No tienes cuenta? <a href="{% url 'registro_usuario' %}">Regístrate aquí</a></p>
     </div>
 </body>
 </html>

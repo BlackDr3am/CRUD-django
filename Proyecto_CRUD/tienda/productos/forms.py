@@ -5,7 +5,7 @@ from .models import Usuario, Producto, ImagenProducto, Categoria
 class RegistroUsuarioForm(UserCreationForm):
     class Meta:
         model = Usuario
-        fields = ['username', 'email', 'password1', 'password2', 'direccion']
+        fields = ['username', 'password1', 'password2']
 
 class ProductoForm(forms.ModelForm):
     categorias = forms.ModelMultipleChoiceField(

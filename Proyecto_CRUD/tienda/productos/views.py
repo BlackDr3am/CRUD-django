@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -15,13 +16,13 @@ class RegistroUsuarioView(CreateView):
     def form_valid(self, form):
         usuario = form.save()
         login(self.request, usuario)
-        return super().form_valid(form)
+        return redirect(self.success_url)  # 👈 Aquí está el redirect correcto
 
 class LoginUsuarioView(LoginView):
     template_name = 'usuarios/login.html'
 
 class LogoutUsuarioView(LogoutView):
-    next_page = reverse_lazy('login_usuario')
+    next_page = reverse_lazy('productos/producto_list.html')
 
 class ProductoListView(LoginRequiredMixin, ListView):
     model = Producto

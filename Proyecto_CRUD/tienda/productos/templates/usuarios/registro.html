@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registrarse</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.errors }}
+            {{ form.as_p }}
+            <button type="submit">Crear cuenta</button>
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login_usuario' %}">Inicia sesión</a></p>
+    </div>
+</body>
+</html>
